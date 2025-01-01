@@ -20,7 +20,7 @@
         width: 100%;
         height: 100%;
         margin: 0;
-        overflow: hidden; /* Prevent scrolling until desktop mode */
+        overflow: auto; /* Allow scrolling */
       }
 
       /* Body Layout */
@@ -29,8 +29,8 @@
         flex-direction: column;
         justify-content: flex-start;
         align-items: stretch;
-        background-color: #f0f0f0; /* Set background to avoid white gaps */
-        color: #333; /* Dark text for better readability */
+        background-color: #f0f0f0;
+        color: #333;
       }
 
       /* Full-screen prompt */
@@ -40,7 +40,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+        background-color: rgba(0, 0, 0, 0.8);
         color: white;
         display: flex;
         justify-content: center;
@@ -59,11 +59,11 @@
 
       /* Block interaction until desktop mode */
       body.no-interaction {
-        pointer-events: none; /* Prevent interaction with content */
+        pointer-events: none;
       }
     </style>
-    <script type="module" crossorigin src="/Quran_Hadith.github.io/assets/index-CJ0HtlRq.js"></script>
-    <link rel="stylesheet" crossorigin href="/Quran_Hadith.github.io/assets/index-B4_v0Pk9.css">
+    <script type="module" crossorigin src="/Quran_Hadith.github.io/assets/index-BUlWpaFs.js"></script>
+    <link rel="stylesheet" crossorigin href="/Quran_Hadith.github.io/assets/index-CMkvvHqN.css">
   </head>
 
   <body>
@@ -83,11 +83,11 @@
             <p>Hi, I am Aashif, My Small recommendation.</p>
             <p>If you are mobile user, Please open desktop site for better experience.</p>
             <p>For the best experience, Please open this site on a desktop or PC.</p>
-            
           </div>
         `;
         document.body.appendChild(prompt);
         document.body.classList.add("no-interaction"); // Block interactions with the site
+        document.body.style.overflow = "hidden"; // Disable scroll when prompt is visible
       }
 
       // Function to check the screen size and hide the prompt when on desktop
@@ -98,7 +98,8 @@
           if (prompt) {
             prompt.style.display = "none";
           }
-          document.body.classList.remove("no-interaction"); // Allow interactions when on desktop
+          document.body.classList.remove("no-interaction");
+          document.body.style.overflow = "auto"; // Re-enable scroll on desktop
         }
       }
 
