@@ -1,0 +1,181 @@
+/* AyahView.module.css */
+/* AyahView.module.css */
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0; /* Example background color */
+}
+
+.cardWrapper {
+  width: 100%;
+  max-width: 800px;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.searchBar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.input {
+  flex: 1;
+}
+
+.button {
+  background-color: #4caf50;
+  color: white;
+}
+
+.ayahContent {
+  margin-top: 20px;
+}
+
+.ayahText {
+  font-size: 2rem;
+  text-align: right;
+  font-family: 'Arabic', sans-serif;
+  line-height: 1.6;
+}
+
+.translation {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.surahInfo {
+  font-size: 0.9rem;
+  color: #888;
+  margin-top: 10px;
+}
+
+/* Full screen background */
+.container {
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(135deg, #7b83c0, #d1b2ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+/* Main content wrapper */
+.card-wrapper {
+  width: 100%;
+  max-width: 800px; /* Set max-width to control the width of the content */
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Search bar */
+.search-bar {
+  width: 100%;
+  display: flex;
+  gap: 12px;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 640px) {
+  .search-bar {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.input {
+  flex-grow: 1;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.button {
+  padding: 12px 24px;
+  background-color: #4f46e5;
+  color: white;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button:disabled {
+  background-color: #b3b3b3;
+  cursor: not-allowed;
+}
+
+.button:hover:enabled {
+  background-color: #3730a3;
+}
+
+/* Ayah content */
+.ayah-content {
+  width: 100%;
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+.ayah-text {
+  font-size: 2rem;
+  line-height: 1.5;
+  font-family: 'Amiri', serif;
+  direction: rtl;
+  margin-bottom: 12px;
+}
+
+.translation {
+  font-size: 1.25rem;
+  color: #555;
+  margin-bottom: 12px;
+}
+
+.surah-info {
+  font-size: 0.875rem;
+  color: #777;
+}
+
+/* Adjust font sizes dynamically */
+@media (max-width: 600px) {
+  .ayah-text {
+    font-size: 1.5rem;
+  }
+
+  .translation {
+    font-size: 1.1rem;
+  }
+
+  .surah-info {
+    font-size: 0.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .ayah-text {
+    font-size: 2.5rem;
+  }
+
+  .translation {
+    font-size: 1.5rem;
+  }
+
+  .surah-info {
+    font-size: 1rem;
+  }
+}

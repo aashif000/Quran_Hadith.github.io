@@ -1,0 +1,85 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+ 
+
+.read-the-docs {
+  color: #888;
+}
+
+
+/* Container for your top components */
+.top-container {
+  display: flex;
+  flex-direction: column; /* Or row depending on your design */
+  justify-content: flex-start; /* Align items at the top */
+  align-items: center; /* Ensure items are centered horizontally */
+  width: 100%;
+  min-height: 100vh; /* Ensure it takes up the full height */
+  padding: 20px; /* Optional: add padding if necessary */
+}
+
+/* Content container for Ayah and Juz views */
+.content-container {
+  display: flex;
+  flex-direction: column; /* Ensure content is stacked */
+  width: 100%;
+  justify-content: flex-start; /* Ensure the content stays at the top */
+}
+
+/* Specific styles for Juz and Ayah views */
+.juz-view, .ayah-view {
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Ensure content is centered in the container */
+  align-items: flex-start; /* Align content at the top */
+}
+
+/* Ensure container width is limited */
+.container {
+  max-width: 100%;  /* Allow full width on smaller screens */
+}
+
+
+@media (max-width: 1024px) {
+  /* Mobile View */
+  .container {
+    max-width: 100%;
+  }
+
+  .flex {
+    flex-wrap: wrap; /* Wrap items when needed */
+  }
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quran_Hadith</title>
+    <meta name="description" content="Lovable Generated Project" />
+    <meta name="author" content="Lovable" />
+    <meta property="og:image" content="/og-image.png" />
+    <style>
+      /* CSS Reset to Remove Default Margins and Padding */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Ensure Body and Root Div Take Full Height */
+      html, body, #root {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        overflow: hidden; /* Prevent scrolling until desktop mode */
+      }
+
+      /* Body Layout */
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+        background-color: #f0f0f0; /* Set background to avoid white gaps */
+        color: #333; /* Dark text for better readability */
+      }
+
+      /* Full-screen prompt */
+      .mobile-prompt {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        text-align: center;
+        font-size: 20px;
+        padding: 20px;
+        overflow: hidden;
+      }
+
+      .mobile-prompt p {
+        margin-bottom: 20px;
+        font-size: 24px;
+      }
+
+      /* Block interaction until desktop mode */
+      body.no-interaction {
+        pointer-events: none; /* Prevent interaction with content */
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+    <script type="module" src="/src/main.tsx"></script>
+
+    <script>
+      // Function to detect if the user is on a mobile device
+      const isMobile = window.innerWidth <= 768 || /Mobi|Android/i.test(navigator.userAgent);
+
+      // Function to create the full-screen prompt
+      function showDesktopPrompt() {
+        const prompt = document.createElement("div");
+        prompt.className = "mobile-prompt";
+        prompt.innerHTML = `
+          <div>
+            <p>Hi, I am Aashif, My Small recommendation.</p>
+            <p>If you are mobile user, Please open desktop site for better experience.</p>
+            <p>For the best experience, Please open this site on a desktop or PC.</p>
+            
+          </div>
+        `;
+        document.body.appendChild(prompt);
+        document.body.classList.add("no-interaction"); // Block interactions with the site
+      }
+
+      // Function to check the screen size and hide the prompt when on desktop
+      function checkScreenSize() {
+        if (window.innerWidth > 768) {
+          // Hide the prompt and allow interactions
+          const prompt = document.querySelector(".mobile-prompt");
+          if (prompt) {
+            prompt.style.display = "none";
+          }
+          document.body.classList.remove("no-interaction"); // Allow interactions when on desktop
+        }
+      }
+
+      // Show the prompt only on mobile devices
+      if (isMobile) {
+        showDesktopPrompt();
+      }
+
+      // Listen for resize events to detect if the user switches to desktop mode
+      window.addEventListener("resize", checkScreenSize);
+    </script>
+  </body>
+</html>

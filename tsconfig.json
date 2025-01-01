@@ -1,0 +1,24 @@
+{
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "noImplicitAny": false,
+    "noUnusedParameters": false,
+    "skipLibCheck": true,
+    "allowJs": true,
+    "noUnusedLocals": false,
+    "strictNullChecks": false,
+    "resolveJsonModule": true,    // Allow importing JSON files as modules
+    "esModuleInterop": true,      // Enable ES module interop for default imports
+    "moduleResolution": "node",   // Ensure Node-style module resolution
+    "target": "es6",              // Set the target ECMAScript version (optional)
+    "jsx": "react"                // Enable JSX for React (optional)
+  }
+}
